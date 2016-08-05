@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sodap by dagnelies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Sodap</h1>
+      <h2 class="project-tagline">Simple Object Data Access Protocol - RESTful API to query and manipulate JSON data</h2>
+      <a href="https://github.com/dagnelies/SodaP" class="btn">View on GitHub</a>
+      <a href="https://github.com/dagnelies/SodaP/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/dagnelies/SodaP/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="title" class="anchor" href="#title" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Title</h1>
+
+<h2>
+<a id="subtitle" class="anchor" href="#subtitle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Subtitle</h2>
+
+<h3>
+<a id="section-3" class="anchor" href="#section-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Section 3</h3>
+
+<h4>
+<a id="section-4" class="anchor" href="#section-4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Section 4</h4>
+
+<ul>
+<li><a href="http://magiccards.info/">http://magiccards.info/</a></li>
+<li><a href="https://mtgjson.com/">https://mtgjson.com/</a></li>
+<li><a href="https://deckbrew.com/api/">https://deckbrew.com/api/</a></li>
+</ul>
+
+<p>Let's take as example, the data from [mtgjson.com], which contains two data sets:</p>
+
+<ul>
+<li>the list of all MTG cards</li>
+<li>the list of all MTG sets</li>
+</ul>
+
+<p>Since all our examples are based on it, becoming familiar with its structure will come in handy.</p>
+
+<p>Let's start with the cards. They are stored in a dictionary called <code>cards</code>, looking like this:</p>
+
+<div class="highlight highlight-source-js"><pre>{
+<span class="pl-k">...</span>
+<span class="pl-s"><span class="pl-pds">"</span>Nevinyrral's Disk<span class="pl-pds">"</span></span> <span class="pl-k">:</span> { <span class="pl-c">/* card data */</span> },
+           <span class="pl-s"><span class="pl-pds">"</span>Norrit<span class="pl-pds">"</span></span> <span class="pl-k">:</span> { <span class="pl-c">/* card data */</span> },
+<span class="pl-s"><span class="pl-pds">"</span>Nullmage Shepherd<span class="pl-pds">"</span></span> <span class="pl-k">:</span> { <span class="pl-c">/* card data */</span> },
+<span class="pl-k">...</span>
+}</pre></div>
+
+<p>And individual card data looks like this:</p>
+
+<pre><code></code></pre>
+<hr>
+
+<p>The sets are stored in a dictionary like this:</p>
+
+<div class="highlight highlight-source-js"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>LEA<span class="pl-pds">"</span></span> <span class="pl-k">:</span> { <span class="pl-c">/* set data */</span> },
+  <span class="pl-s"><span class="pl-pds">"</span>LEB<span class="pl-pds">"</span></span> <span class="pl-k">:</span> { <span class="pl-c">/* set data */</span> },
+  <span class="pl-s"><span class="pl-pds">"</span>2ED<span class="pl-pds">"</span></span> <span class="pl-k">:</span> { <span class="pl-c">/* set data */</span> },
+  <span class="pl-k">...</span>
+}</pre></div>
+
+<p>Each an individual set data looks like this:</p>
+
+<div class="highlight highlight-source-js"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Nemesis<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>code<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>NMS<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>gathererCode<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>NE<span class="pl-pds">"</span></span>,         <span class="pl-c">// optional</span>
+  <span class="pl-s"><span class="pl-pds">"</span>oldCode<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>NEM<span class="pl-pds">"</span></span>,             <span class="pl-c">// optional</span>
+  <span class="pl-s"><span class="pl-pds">"</span>magicCardsInfoCode<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>ne<span class="pl-pds">"</span></span>,   <span class="pl-c">// optional</span>
+  <span class="pl-s"><span class="pl-pds">"</span>releaseDate<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>2000-02-14<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>border<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>black<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>type<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>expansion<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>block<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Masques<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>onlineOnly<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-c1">false</span>,
+  <span class="pl-s"><span class="pl-pds">"</span>booster<span class="pl-pds">"</span></span> <span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">"</span>land<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>common<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>common<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>common<span class="pl-pds">"</span></span>, <span class="pl-c">/*...*/</span> , <span class="pl-s"><span class="pl-pds">"</span>uncommon<span class="pl-pds">"</span></span>, [ <span class="pl-s"><span class="pl-pds">"</span>rare<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>mythic rare<span class="pl-pds">"</span></span> ] ],
+  <span class="pl-s"><span class="pl-pds">"</span>cards<span class="pl-pds">"</span></span> <span class="pl-k">:</span> [ {}, {}, {}, <span class="pl-k">...</span> ]
+}</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/dagnelies/SodaP">Sodap</a> is maintained by <a href="https://github.com/dagnelies">dagnelies</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
